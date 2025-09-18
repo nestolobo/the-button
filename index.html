@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Button - Habit Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="score" id="score">Streak: 0</div>
+
+    <div class="container">
+        <div id="setup" class="setup">
+            <div class="input-group">
+                <label>What's the thing you want to do?</label>
+                <input type="text" id="habitName" placeholder="lift weights">
+            </div>
+
+            <div class="input-group">
+                <label>How often do you need to wait before you do it again?</label>
+                <div class="input-inline">
+                    <span>Every</span>
+                    <input type="number" id="waitDays" min="1" value="4">
+                    <span>day(s)</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>How long do you have to '<span id="habitPreview">lift weights</span>' after that?</label>
+                <div class="input-inline">
+                    <input type="number" id="doDays" min="1" value="2">
+                    <span>day(s)</span>
+                </div>
+            </div>
+
+            <button id="saveButton" class="save-button">Start Tracking</button>
+        </div>
+
+        <div id="tracker" class="tracker hidden">
+            <h2>Press the button when you '<span id="habitDisplay"></span>'</h2>
+
+            <button id="actionButton" class="action-button">I did it!</button>
+
+            <div id="waitMessage" class="message hidden">
+                You can press the button again in <span id="waitTime"></span>
+            </div>
+
+            <div id="doMessage" class="message hidden">
+                You have <span id="doTime"></span> to press the button again
+            </div>
+
+            <button id="resetButton" class="reset-button">Reset Settings</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
